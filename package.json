@@ -1,0 +1,36 @@
+{
+  "name": "cheekyfeedback",
+  "version": "1.0.0",
+  "description": "Just a little web survey for a uni assingment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitchello77/CheekyFeedback.git"
+  },
+  "author": "Mitchell Williams",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitchello77/CheekyFeedback/issues"
+  },
+  "homepage": "https://github.com/mitchello77/CheekyFeedback#readme",
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-connect-php": "0.0.8",
+    "gulp-ftp": "^1.1.0",
+    "gulp-prompt": "^0.2.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.2",
+    "support-for": "^1.0.6"
+  },
+  "dependencies": {
+    "normalize-scss": "^5.0.3",
+    "support-for": "^1.0.6"
+  }
+}

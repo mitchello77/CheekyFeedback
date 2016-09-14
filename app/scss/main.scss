@@ -1,0 +1,57 @@
+/* Imports */
+@import '_normalize';
+
+/* INcludes */
+@include normalize();
+
+
+/* Varibles */
+$cheeky_red: #FF5757;
+$cheeky_blue: #52C0FF;
+$cheeky_orange: #E8A341;
+$cheeky_green: #97FF80;
+$cheeky_purple: #9A5DE8;
+/* BEGIN */
+
+body {
+  background: #fff;
+}
+
+.main-wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 100px;
+  background: Pink;
+}
+main {
+  width: 100%;
+  flex-grow: 1;
+  background: lightBlue;
+  padding: 50px 0;
+
+  section {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    background: Red;
+    height: 100%;
+  }
+
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  background: Coral;
+}
