@@ -29,19 +29,19 @@ gulp.task('scss', function(){
 });
 
 gulp.task('build:html', function(){
-  return gulp.src(['app/*.html'])
+  return gulp.src(['app/**/*.html'])
     .pipe(gulp.dest('deploy'))
 });
 
 gulp.task('build:css', function(){
-  return gulp.src(['app/css/*.css'])
+  return gulp.src(['app/css/**/*.css'])
     .pipe(csso())
     .pipe(gulp.dest('deploy/css'))
 });
 
 gulp.task('build:js', function(){
   return pump([
-    gulp.src(['app/js/*.js']),
+    gulp.src(['app/js/**/*.js']),
     uglify(),
     gulp.dest('deploy/js')] )
 });
