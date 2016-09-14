@@ -1,0 +1,1 @@
+$(function(){$.fn.extend({animateCss:function(n){var i="webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend";this.addClass("animated "+n).one(i,function(){$(this).removeClass("animated "+n)})}}),console.log("JQuery Version: "+$.fn.jquery),$("#intro").animateCss("slideInLeft")});

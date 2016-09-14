@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <meta charset="utf-8">
     <title>Cheeky Feedback</title>
+    <meta name="description" content="Cheeky Bevy Market Day Feedback System.">
+    <meta name="keywords" content="Cheeky, Feedback, Survey, Feedback, Bevy, QUTopia, QUT">
+    <meta name="author" content="Mitchell Williams - Millar">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/png" href="img/favicon.png"> <!-- 32px -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
     <div class="main-wrap">
       <header>
-
+        <!-- <h1>Cheeky Feedback</h1> -->
+        <span class="logo"></span>
+        <div class="colourborder"><div></div><div></div><div></div><div></div><div></div></div>
       </header>
       <main>
-        <section id="select_drink">
-          Drinks
+        <section id="intro">
+          <div class="wrap">
+            <h2>Welcome to Cheeky Feedback.</h2>
+            <div class="action">
+              <button class="nav" type="button" autofocus="true" data->Begin!</button>
+              <span class="hint">(You can also swipe left to continue!)</span>
+            </div>
+          </div>
+        </section>
+        <section id="select_drink" class="hidden" data-column="tblResponses_DrinkName">
+          <div class="wrap">
+
+          </div>
         </section>
         <section id="select_score" class="hidden">
-          Scores
+          <div class="wrap">
+
+          </div>
         </section>
         <section id="select_coupon" class="hidden">
-          Coupon?
+          <div class="wrap">
+
+          </div>
         </section>
         <section id="select_demographics" class="hidden">
-          Demographics
+          <div class="wrap">
+
+          </div>
         </section>
         <section id="end" class="hidden">
-          Thank you!
+          <div class="wrap">
+
+          </div>
         </section>
       </main>
-      <footer></footer>
+      <footer><div class="colourborder"><div></div><div></div><div></div><div></div><div></div></div></footer>
     </div>
 
   </body>

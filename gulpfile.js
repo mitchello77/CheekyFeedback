@@ -7,6 +7,9 @@ var gutil = require('gulp-util');
 var ftp = require('gulp-ftp');
 var prompt = require('gulp-prompt');
 var autoprefixer = require('gulp-autoprefixer');
+var uglify = require('gulp-uglify');
+var pump = require('pump');
+var csso = require('gulp-csso');
 
 
 
@@ -16,6 +19,11 @@ gulp.task('scss', function(){
       includePaths: ['node_modules/support-for/sass'],
     })) // Converts Sass to CSS with gulp-sass
     .pipe(autoprefixer({browsers: ['last 2 versions']}))
+    .pipe(csso({
+      restructure: false,
+      sourceMap: true,
+      debug: true
+    }))
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.stream())
 });
@@ -27,7 +35,21 @@ gulp.task('build:html', function(){
 
 gulp.task('build:css', function(){
   return gulp.src(['app/css/*.css'])
+    .pipe(csso())
     .pipe(gulp.dest('deploy/css'))
+});
+
+gulp.task('build:js', function(){
+  return pump([
+    gulp.src(['app/js/*.js']),
+    uglify(),
+    gulp.dest('deploy/js')] )
+});
+
+gulp.task('build:img', function(){
+  return pump([
+    gulp.src(['app/img/**']),
+    gulp.dest('deploy/img')] )
 });
 
 gulp.task('browserSync', function() {
@@ -69,6 +91,6 @@ gulp.task('upload', function () {
 });
 
 gulp.task('deploy', function() {
-  runSequence('clean:deploy','scss',['build:html','build:css'],'upload');
+  runSequence('clean:deploy','scss',['build:html','build:css', 'build:js', 'build:img'],'upload');
   console.log('Deployed!');
 });

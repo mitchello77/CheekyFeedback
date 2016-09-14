@@ -1,7 +1,8 @@
 /* Imports */
 @import '_normalize';
+@import '_animate';
 
-/* INcludes */
+/* Includes */
 @include normalize();
 
 
@@ -11,16 +12,21 @@ $cheeky_blue: #52C0FF;
 $cheeky_orange: #E8A341;
 $cheeky_green: #97FF80;
 $cheeky_purple: #9A5DE8;
+
+$col_main: #ECF0F1;
+
+$screen_phone: 500px;
 /* BEGIN */
 
 body {
   background: #fff;
+  font-family: 'Roboto', 'Helvetica', 'Helvetica-Neue', sans-serif;
+  font-weight: 400;
 }
 
 .main-wrap {
   display: flex;
   flex-flow: column nowrap;
-  align-content: space-between;
   width: 100%;
   min-height: 100vh;
 }
@@ -32,26 +38,142 @@ body {
 header {
   width: 100%;
   height: 100px;
-  background: Pink;
+  background: #fff;
+  position: relative;
+  padding-bottom: 10px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  @media screen and (max-width: $screen_phone) {
+    height: 130px;
+  }
+  h1 {
+    color: #000;
+  }
+  .logo {
+    background: url('../img/logo.svg') no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 80%;
+    width: 90%;
+    box-sizing: border-box;
+    @media screen and (max-width: $screen_phone) {
+      height: 90%;
+    }
+  }
+  .colourborder{
+    height: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+  }
 }
 main {
   width: 100%;
   flex-grow: 1;
-  background: lightBlue;
-  padding: 50px 0;
+  position: relative;
+  background: $col_main;
 
   section {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    display: flex;
-    background: Red;
-    height: 100%;
+    background: $col_main;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px 10%;
+    box-sizing: border-box;
+    .wrap {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    h2 {
+      font-size: 3em;
+      font-size: 3.5vw;
+      font-weight: 300;
+      text-align: center;
+      @media screen and (max-width: $screen_phone) {
+        font-size: 2em;
+      }
+    }
+    @media screen and (max-width: $screen_phone) {
+    padding: 15px 2.5%;
+    }
   }
 
+  #intro {
+    animation-delay: 1s;
+    .wrap {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+      .action {
+        text-align: center;
+        margin-top: 100px;
+        @media screen and (max-width: $screen_phone) {
+        margin-top: 80px;
+        }
+        .hint {
+          display: block;
+          padding-top: 10px;
+          font-size: 1.2em;
+          font-weight: 300;
+          color: lighten(#000, 20);
+          }
+        button.nav {
+          background-color: $cheeky_red;
+          border: 0.1em solid darken($cheeky_red,20);
+          &:hover {
+            background-color: darken($cheeky_red,10);
+          }
+        }
+      }
+    }
+  }
 }
 
 footer {
   width: 100%;
-  height: 50px;
-  background: Coral;
+  height: 20px;
+  .colourborder {
+    height: inherit;
+  }
 }
+
+div.colourborder {
+  display: flex;
+  width: 100%;
+    div {
+    flex-wrap: nowrap;
+    width: percentage(100/5);
+    height: 100%;
+    &:nth-of-type(1n) {background: $cheeky_red}
+    &:nth-of-type(2n) {background: $cheeky_orange}
+    &:nth-of-type(3n) {background: $cheeky_green}
+    &:nth-of-type(4n) {background: $cheeky_blue}
+    &:nth-of-type(5n) {background: $cheeky_purple}
+  }
+}
+
+button.nav {
+  height: 100px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 1.8em;
+  color: #fff;
+  font-weight: 300;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  cursor: pointer;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-align: center;
+  touch-action: manipulation;
+  user-select: none;
+  }

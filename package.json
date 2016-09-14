@@ -22,14 +22,18 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-connect-php": "0.0.8",
+    "gulp-csso": "^2.0.0",
     "gulp-ftp": "^1.1.0",
     "gulp-prompt": "^0.2.0",
     "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "pump": "^1.0.1",
     "run-sequence": "^1.2.2",
     "support-for": "^1.0.6"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "normalize-scss": "^5.0.3",
     "support-for": "^1.0.6"
   }
