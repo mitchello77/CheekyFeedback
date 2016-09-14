@@ -45,7 +45,7 @@ header {
   align-items:center;
   justify-content: center;
   @media screen and (max-width: $screen_phone) {
-    height: 130px;
+    height: 110px;
   }
   h1 {
     color: #000;
@@ -72,6 +72,7 @@ header {
 }
 main {
   width: 100%;
+  min-height: 600px;
   flex-grow: 1;
   position: relative;
   background: $col_main;
@@ -108,7 +109,7 @@ main {
   }
 
   #intro {
-    animation-delay: 1s;
+    animation-delay: 1.5s;
     .wrap {
     flex-flow: column nowrap;
     justify-content: center;
@@ -116,6 +117,7 @@ main {
       .action {
         text-align: center;
         margin-top: 100px;
+        flex-grow: 0.3;
         @media screen and (max-width: $screen_phone) {
         margin-top: 80px;
         }
