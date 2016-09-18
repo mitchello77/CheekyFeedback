@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="img/favicon.png"> <!-- 32px -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
     <div class="main-wrap">
@@ -24,43 +23,96 @@
         <div class="colourborder"><div></div><div></div><div></div><div></div><div></div></div>
       </header>
       <main>
-        <section id="intro">
+        <section id="intro" class="hidden" data-directionAllowed="left">
           <div class="wrap">
             <h2>Welcome to Cheeky Feedback.</h2>
+            <p>After enjoying our drink please fill out this cheeky little feedback form, it will only take a minute! <br /> Click below to begin.</p>
             <div class="action">
-              <button class="nav" type="button" autofocus="true" data->Begin!</button>
-              <span class="hint">(You can also swipe left to continue!)</span>
+              <button class="nav" type="button">Begin!</button>
+              <!-- <span class="hint">(You can also swipe left to continue!)</span> -->
             </div>
           </div>
         </section>
-        <section id="select_drink" class="hidden" data-column="tblResponses_DrinkName">
+        <section id="select_drink" class="hidden" data-directionAllowed="right">
           <div class="wrap">
-
+            <h2>Select your Drink.</h2>
+            <p>Pick ONE of the drinks you purchased. If you bought more then one, pick the best or, if you would mind, fill out this form again.</p>
+            <div class="grid">
+              <button type="button" name="Love Potion" class="d_lp"><span>Love Potion</span></button>
+              <button type="button" name="Darkside" class="d_ds"><span>Darkside</span></button>
+              <button type="button" name="Hippie" class="d_hip" ><span>Hippie</span></button>
+              <button type="button" name="Batchy" class="d_bat"><span>Batchy</span></button>
+              <button type="button" name="Panty Dropper" class="d_pd"><span>Panty Dropper</span></button>
+              <button type="button" name="Deconstructed Mayham" class="d_dm"><span>Deconstructed Mayham</span></button>
+              <button type="button" name="You're A Wizard Harry" class="d_yawh"><span>You're A Wizard Harry</span></button>
+              <button type="button" name="Atomic Bomb" class="d_ab"><span>Atom Bomb</span></button>
+              <button type="button" name="Sample" class="d_sam"><span>Sample</span></button>
+            </div>
+            <div class="action">
+              <button class="nav" type="button" data->Go Back!</button>
+              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
+            </div>
           </div>
         </section>
-        <section id="select_score" class="hidden">
+        <section id="select_score" class="hidden" data-directionAllowed="right">
           <div class="wrap">
-
+            <h2>Rate the Drink.</h2>
+            <p>How did the drink taste? How did it feel. Most importantly, do you feel cheeky?</p>
+            <div class="grid">
+              <button type="button" name="1" class="s_bad"><span>Bad</span></button>
+              <button type="button" name="2" class="s_okay"><span>Okay</span></button>
+              <button type="button" name="3" class="s_good"><span>Good</span></button>
+              <button type="button" name="4" class="s_amazing"><span>Amazing</span></button>
+            </div>
+            <div class="action">
+              <button class="nav" type="button" data->Go Back!</button>
+              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
+            </div>
           </div>
         </section>
-        <section id="select_coupon" class="hidden">
+        <section id="select_coupon" class="hidden" data-directionAllowed="right">
           <div class="wrap">
-
+            <h2>Did you use a coupon to Purchase?</h2>
+            <p>The coupon would have been given from our partener JoyPop.</p>
+            <div class="grid">
+              <button type="button" name="Yes" class="c_yes"><span>Yes!</span></button>
+              <button type="button" name="No" class="c_no"><span>No :(</span></button>
+            </div>
+            <div class="action">
+              <button class="nav" type="button" data->Go Back!</button>
+              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
+            </div>
           </div>
         </section>
-        <section id="select_demographics" class="hidden">
+        <section id="select_demographics" class="hidden" data-directionAllowed="right">
           <div class="wrap">
-
+            <h2>About You.</h2>
+            <p>We promse we won't sell your information to india ;)</p>
+            <div class="form">
+              Form with fields. Age, Gender
+            </div>
+            <div class="action">
+              <button class="nav back" type="button" data->Go Back!</button>
+              <button class="nav submit" type="button" data->Submit!</button>
+              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
+            </div>
           </div>
         </section>
-        <section id="end" class="hidden">
+        <section id="end" class="hidden" data-directionAllowed="left" data-pos="1" data-directionAllowed="none">
           <div class="wrap">
-
+            <h2>From the whole CheekBevy Team, Thankyou!</h2>
+            <p>Make sure you check out our partner JoyPop and be sure to use the $Q10 off coupon.</p>
+            <div class="action">
+              <button class="nav" type="button" data->Again!</button>
+              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
+            </div>
           </div>
         </section>
       </main>
-      <footer><div class="colourborder"><div></div><div></div><div></div><div></div><div></div></div></footer>
+      <footer><div class="colourborder"><div class="active"><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div></div></footer>
     </div>
+    <!--<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
+    <script type="text/javascript" src="js/main.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

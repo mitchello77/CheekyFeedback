@@ -72,33 +72,93 @@ header {
 }
 main {
   width: 100%;
-  min-height: 450px;
+  min-height: 100%;
   flex-grow: 1;
   position: relative;
   background: $col_main;
+  overflow: hidden;
 
   section {
     width: 100%;
     margin: 0 auto;
     background: $col_main;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     padding: 50px 10%;
     box-sizing: border-box;
     .wrap {
       background: #fff;
       width: 100%;
-      height: 100%;
+      height: auto;
+      min-height: 100%;
+      box-sizing: border-box;
       display: flex;
       box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.2);
+      flex-flow: column nowrap;
+      justify-content:space-between;
+      align-items: center;
+      padding: 50px;
+      @media screen and (min-width: $screen_phone) {
+        padding: 20px;
+      }
+      .action {
+        .hint {
+          display: block;
+          padding-top: 10px;
+          font-size: 1em;
+          font-weight: 300;
+          color: lighten(#000, 20);
+            @media screen and (min-width: $screen_phone) {
+            display: none;
+            }
+        }
+        button.nav {
+          text-align: center;
+        }
+        button.submit {
+          margin-left: 50px;
+        }
+      }
+      .grid {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        button {
+          height: 300px;
+          width: 300px;
+          border-radius: 5px;
+          margin: 30px;
+          border: 0;
+          position: relative;
+          background-size: auto 55%;
+          background-repeat: no-repeat;
+          background-position: center 30%;
+          box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+          span {
+            display: block;
+            position: absolute;
+            text-align: center;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #fff;
+            border: 0;
+          }
+          @media screen and (max-width: $screen_phone) {
+            height: 250px;
+            width: 250px;
+            margin: 20px;
+          }
+        }
+      }
     }
     h2 {
       font-size: 3em;
       font-size: 3.5vw;
       font-weight: 300;
+      margin: 10px;
       text-align: center;
       @media screen and (max-width: $screen_phone) {
         font-size: 2em;
@@ -110,10 +170,9 @@ main {
   }
 
   #intro {
-    animation-delay: 1.5s;
+    animation-delay: 1s;
     .wrap {
     flex-flow: column nowrap;
-    justify-content: center;
     align-items: center;
       .action {
         text-align: center;
@@ -122,19 +181,74 @@ main {
         @media screen and (max-width: $screen_phone) {
         margin-top: 80px;
         }
-        .hint {
-          display: block;
-          padding-top: 10px;
-          font-size: 1.2em;
-          font-weight: 300;
-          color: lighten(#000, 20);
-          }
         button.nav {
           background-color: $cheeky_red;
           border: 0.1em solid darken($cheeky_red,20);
           &:hover {
-            background-color: darken($cheeky_red,10);
+            background-color: darken($cheeky_red,20);
           }
+        }
+      }
+    }
+  }
+  #select_drink {
+    .action {
+      button.nav {
+        background-color: $cheeky_orange;
+        border: 0.1em solid darken($cheeky_orange,20);
+        &:hover {
+          background-color: darken($cheeky_orange,20);
+        }
+      }
+    }
+  }
+  #select_score {
+    .action {
+      button.nav {
+        background-color: $cheeky_green;
+        border: 0.1em solid darken($cheeky_green,20);
+        &:hover {
+          background-color: darken($cheeky_green,20);
+        }
+      }
+    }
+  }
+  #select_coupon {
+    .action {
+      button.nav {
+        background-color: $cheeky_blue;
+        border: 0.1em solid darken($cheeky_blue,20);
+        &:hover {
+          background-color: darken($cheeky_blue,20);
+        }
+      }
+    }
+  }
+  #select_demographics {
+    .action {
+      button.back {
+        background-color: $cheeky_purple;
+        border: 0.1em solid darken($cheeky_purple,20);
+        &:hover {
+          background-color: darken($cheeky_purple,20);
+        }
+      }
+      button.submit {
+        background-color: #666;
+        border: 0.1em solid darken(#666,20);
+        &:hover {
+          background-color: darken(#666,20);
+        }
+      }
+    }
+  }
+  #end {
+    .action {
+      button.nav {
+        background-color: $cheeky_red;
+        border: 0.1em solid darken($cheeky_red,20);
+        &:hover {
+          background-color: darken($cheeky_red,20);
         }
       }
     }
@@ -143,7 +257,8 @@ main {
 
 footer {
   width: 100%;
-  height: 20px;
+  height: 30px;
+  background: $col_main;
   .colourborder {
     height: inherit;
   }
@@ -152,15 +267,24 @@ footer {
 div.colourborder {
   display: flex;
   width: 100%;
-    div {
-    flex-wrap: nowrap;
-    width: percentage(100/5);
-    height: 100%;
-    &:nth-of-type(1n) {background: $cheeky_red}
-    &:nth-of-type(2n) {background: $cheeky_orange}
-    &:nth-of-type(3n) {background: $cheeky_green}
-    &:nth-of-type(4n) {background: $cheeky_blue}
-    &:nth-of-type(5n) {background: $cheeky_purple}
+  div {
+  flex-wrap: nowrap;
+  width: percentage(100/5);
+  height: 100%;
+  box-sizing: border-box;
+    span{
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+    &:nth-of-type(1) span {background: $cheeky_red}
+    &:nth-of-type(2) span {background: $cheeky_orange}
+    &:nth-of-type(3) span {background: $cheeky_green}
+    &:nth-of-type(4) span {background: $cheeky_blue}
+    &:nth-of-type(5) span {background: $cheeky_purple}
+    &:not(.active) {
+      padding-top: 10px;
+    }
   }
 }
 
@@ -180,3 +304,22 @@ button.nav {
   touch-action: manipulation;
   user-select: none;
   }
+section .grid {
+  .d_lp { background-color: #CF3C3C; background-image: url('../img/icon-lovepotion.svg');}
+  .d_ds { background-color: #1C1C44; background-image: url('../img/icon-darkside.svg');}
+  .d_hip { background-color: #87BF56; background-image: url('../img/icon-hippie.svg');}
+  .d_bat { background-color: #BF56B5; background-image: url('../img/icon-batchie.svg');}
+  .d_pd { background-color: #D6CC3E; background-image: url('../img/icon-panty.svg');}
+  .d_dm { background-color: #BF9556; background-image: url('../img/icon-hipster.svg');}
+  .d_yawh { background-color: #5685BF; background-image: url('../img/icon-harry.svg');}
+  .d_ab { background-color: #56BF9A; background-image: url('../img/icon-atomicbomb.svg');}
+  .d_sam { background-color: #555A60; background-image: url('../img/icon-sample.svg');}
+
+  .s_bad { background-color: #BF3030; background-image: url('../img/icon-bad.svg');}
+  .s_okay { background-color: #CC7723; background-image: url('../img/icon-okay.svg');}
+  .s_good { background-color: #CCCC23; background-image: url('../img/icon-good.svg');}
+  .s_amazing { background-color: #23CC23; background-image: url('../img/icon-amazing.svg');}
+
+  .c_yes { background-color: #23CC23; background-image: url('../img/icon-yes.svg');}
+  .c_no { background-color: #BF3030; background-image: url('../img/icon-no.svg');}
+}
