@@ -33,6 +33,11 @@ gulp.task('build:html', function(){
     .pipe(gulp.dest('deploy'))
 });
 
+gulp.task('build:php', function(){
+  return gulp.src(['app/**/*.php'])
+    .pipe(gulp.dest('deploy'))
+});
+
 gulp.task('build:css', function(){
   return gulp.src(['app/css/**/*.css'])
     .pipe(csso())
@@ -91,6 +96,6 @@ gulp.task('upload', function () {
 });
 
 gulp.task('deploy', function() {
-  runSequence('clean:deploy','scss',['build:html','build:css', 'build:js', 'build:img'],'upload');
+  runSequence('clean:deploy','scss',['build:html','build:css', 'build:js', 'build:img','build:php'],'upload');
   console.log('Deployed!');
 });

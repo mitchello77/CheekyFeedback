@@ -19,7 +19,7 @@
     <div class="main-wrap">
       <header>
         <!-- <h1>Cheeky Feedback</h1> -->
-        <span class="logo"></span>
+        <a href="http://cheekyfeedback.tk/"><span class="logo"></span></a>
         <div class="colourborder"><div></div><div></div><div></div><div></div><div></div></div>
       </header>
       <main>
@@ -75,8 +75,8 @@
             <h2>Did you use a coupon to Purchase?</h2>
             <p>The coupon would have been given from our partener JoyPop.</p>
             <div class="grid">
-              <button type="button" name="Yes" class="c_yes"><span>Yes!</span></button>
-              <button type="button" name="No" class="c_no"><span>No :(</span></button>
+              <button type="button" name="1" class="c_yes"><span>Yes!</span></button>
+              <button type="button" name="0" class="c_no"><span>No :(</span></button>
             </div>
             <div class="action">
               <button class="nav" type="button" data->Go Back!</button>
@@ -90,10 +90,32 @@
             <p>We promse we won't sell your information to india ;)</p>
             <div class="form">
               Form with fields. Age, Gender
+              fields with the previous selection.
+                <form id="form" method="post" target="hidden-frame" action="sendform.php">
+                  <fieldset>
+                    <legend>Age: </legend>
+                    <input type="text" name="age" id="age" placeholder="Age" pattern="0?[1-9]|[1-9][0-9]" title="Please input only a number" required>
+                  </fieldset>
+                  <fieldset>
+                    <legend>Choose your gender: </legend>
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="male" value="Male" checked="TRUE">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="female" value="Female">
+                  </fieldset>
+                  <fieldset class="hidden">
+                    <input type="text" name="drink" id="drink" readonly> <br />
+                    <input type="text" name="score" id="score" readonly> <br />
+                    <input type="text" name="coupon" id="coupon" readonly> <br />
+                    <input type="text" name="useragent" id="useragent" readonly> <br />
+                    <input type="text" name="device" id="device" readonly> <br />
+                  </fieldset>
+                </form>
+                <iframe class="hidden" name="hidden-frame"></iframe>
             </div>
             <div class="action">
-              <button class="nav back" type="button" data->Go Back!</button>
-              <button class="nav submit" type="button" data->Submit!</button>
+              <button class="nav submit" type="submit" form="form">Submit!</button>
+              <button class="nav back" type="button">Go Back!</button>
               <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
             </div>
           </div>
