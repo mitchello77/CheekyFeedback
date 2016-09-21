@@ -30,7 +30,7 @@ function get_client_ip() {
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // incomming Varibles
-$age = mysqli_real_escape_string($conn, $_POST["age"]);
+$age = mysqli_real_escape_string($conn, isset($_POST['age']) ? $_POST['age'] : '0');
 $gender = mysqli_real_escape_string($conn, $_POST["gender"]);
 $drink = mysqli_real_escape_string($conn, $_POST["drink"]);
 $score = mysqli_real_escape_string($conn, $_POST["score"]);

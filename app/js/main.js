@@ -64,8 +64,10 @@ $(function() {
       previousSection($('#select_demographics'));
     });
     $('#select_demographics .submit').click(function() {
-      $('#form')[0].reset();
-      nextSection($('#select_demographics'));
+      if ($('#age').val()) {
+        $('#form')[0].reset();
+        nextSection($('#select_demographics'));
+      }
     });
     $('#end .nav').click(function() {
       startSection($('#end'));

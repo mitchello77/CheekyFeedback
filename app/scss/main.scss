@@ -40,12 +40,14 @@ header {
   height: 100px;
   background: #fff;
   position: relative;
-  padding-bottom: 10px;
+  box-sizing: border-box;
   display: flex;
   align-items:center;
   justify-content: center;
+  border-bottom: 1px solid #ccc;
   @media screen and (max-width: $screen_phone) {
-    height: 90px;
+    height: 10vh;
+    max-height: 80px;
   }
   h1 {
     color: #000;
@@ -64,14 +66,6 @@ header {
         height: 90%;
       }
     }
-  }
-  .colourborder{
-    height: 10px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: block;
   }
 }
 main {
@@ -101,18 +95,33 @@ main {
       align-items: center;
       padding: 50px;
       @media screen and (max-width: $screen_phone) {
-        padding: 100px;
+        padding: 20px;
+      }
+      form{
+        input[type="text"] {
+            padding: 8px;
+        }
       }
       p{
         text-align: center;
         color: lighten(#000, 20);
       }
       .action {
-        button.nav {
-          text-align: center;
-        }
+        margin-top: 30px;
+        text-align: center;
         button.submit {
-          margin-left: 50px;
+          margin-right: 50px;
+          @media screen and (max-width: 700px) {
+            margin-right: 0px;
+            margin-bottom: 20px;
+          }
+          @media screen and (max-width: 700px) and (min-width: 620px) {
+            margin-bottom: 0px;
+          }
+          @media screen and (max-width: $screen_phone) {
+            margin-right: 0px;
+            margin-bottom: 20px;
+          }
         }
       }
       .grid {
@@ -174,10 +183,10 @@ main {
     align-items: center;
       .action {
         text-align: center;
-        margin-top: 100px;
+        margin-top: 100px !important;
         flex-grow: 0.3;
         @media screen and (max-width: $screen_phone) {
-        margin-top: 40px;
+        margin-top: 40px !important;
         }
         button.nav {
           background-color: $cheeky_red;
@@ -306,7 +315,6 @@ section .grid {
   .d_lp { background-color: #CF3C3C; background-image: url('../img/icon-lovepotion.svg');}
   .d_ds { background-color: #1C1C44; background-image: url('../img/icon-darkside.svg');}
   .d_hip { background-color: #87BF56; background-image: url('../img/icon-hippie.svg');}
-  .d_bat { background-color: #BF56B5; background-image: url('../img/icon-batchie.svg');}
   .d_pd { background-color: #D6CC3E; background-image: url('../img/icon-panty.svg');}
   .d_dm { background-color: #BF9556; background-image: url('../img/icon-hipster.svg');}
   .d_yawh { background-color: #5685BF; background-image: url('../img/icon-harry.svg');}

@@ -13,14 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/png" href="img/favicon.png"> <!-- 32px -->
-    <script async type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
   </head>
   <body>
     <div class="main-wrap">
       <header>
-        <!-- <h1>Cheeky Feedback</h1> -->
         <a href="http://cheekyfeedback.tk/"><span class="logo"></span></a>
-        <div class="colourborder"><div></div><div></div><div></div><div></div><div></div></div>
       </header>
       <main>
         <section id="intro" class="hidden" data-directionAllowed="left">
@@ -29,7 +27,6 @@
             <p>After enjoying our drink please fill out this cheeky little feedback form, it will only take a minute! <br /> Click below to begin.</p>
             <div class="action">
               <button class="nav" type="button">Begin!</button>
-              <!-- <span class="hint">(You can also swipe left to continue!)</span> -->
             </div>
           </div>
         </section>
@@ -41,7 +38,6 @@
               <button type="button" name="Love Potion" class="d_lp"><span>Love Potion</span></button>
               <button type="button" name="Darkside" class="d_ds"><span>Darkside</span></button>
               <button type="button" name="Hippie" class="d_hip" ><span>Hippie</span></button>
-              <button type="button" name="Batchy" class="d_bat"><span>Batchy</span></button>
               <button type="button" name="Panty Dropper" class="d_pd"><span>Panty Dropper</span></button>
               <button type="button" name="Deconstructed Mayham" class="d_dm"><span>Deconstructed Mayham</span></button>
               <button type="button" name="You're A Wizard Harry" class="d_yawh"><span>You're A Wizard Harry</span></button>
@@ -50,7 +46,6 @@
             </div>
             <div class="action">
               <button class="nav" type="button" data->Go Back!</button>
-              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
             </div>
           </div>
         </section>
@@ -66,7 +61,6 @@
             </div>
             <div class="action">
               <button class="nav" type="button" data->Go Back!</button>
-              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
             </div>
           </div>
         </section>
@@ -80,7 +74,6 @@
             </div>
             <div class="action">
               <button class="nav" type="button" data->Go Back!</button>
-              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
             </div>
           </div>
         </section>
@@ -89,12 +82,10 @@
             <h2>About You.</h2>
             <p>We promse we won't sell your information to india ;)</p>
             <div class="form">
-              Form with fields. Age, Gender
-              fields with the previous selection.
                 <form id="form" method="post" target="hidden-frame" action="sendform.php">
                   <fieldset>
                     <legend>Age: </legend>
-                    <input type="text" name="age" id="age" placeholder="Age" pattern="0?[1-9]|[1-9][0-9]" title="Please input only a number" required>
+                    <input type="text" name="age" id="age" placeholder="Age" pattern="0?[1-9]|[1-9][0-9]" title="Please input only a number" required >
                   </fieldset>
                   <fieldset>
                     <legend>Choose your gender: </legend>
@@ -116,7 +107,6 @@
             <div class="action">
               <button class="nav submit" type="submit" form="form">Submit!</button>
               <button class="nav back" type="button">Go Back!</button>
-              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
             </div>
           </div>
         </section>
@@ -126,14 +116,12 @@
             <p>Make sure you check out our partner JoyPop and be sure to use the $Q10 off coupon.</p>
             <div class="action">
               <button class="nav" type="button" data->Again!</button>
-              <!-- <span class="hint">(You can also swipe right to go back!)</span> -->
             </div>
           </div>
         </section>
       </main>
       <footer><div class="colourborder"><div class="active"><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div></div></footer>
     </div>
-    <!--<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script> -->
     <script type="text/javascript" src="js/main.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
