@@ -51,6 +51,24 @@ gulp.task('build:js', function(){
     gulp.dest('deploy/js')] )
 });
 
+gulp.task('build:txt', function(){
+  return pump([
+    gulp.src(['app/**/*.txt']),
+    gulp.dest('deploy/')] )
+});
+
+gulp.task('build:xml', function(){
+  return pump([
+    gulp.src(['app/**/*.xml']),
+    gulp.dest('deploy/')] )
+});
+
+gulp.task('build:htaccess', function(){
+  return pump([
+    gulp.src(['app/**/*.htaccess'],{dot : true}),
+    gulp.dest('deploy/')] )
+});
+
 gulp.task('build:img', function(){
   return pump([
     gulp.src(['app/img/**']),
@@ -96,6 +114,6 @@ gulp.task('upload', function () {
 });
 
 gulp.task('deploy', function() {
-  runSequence('clean:deploy','scss',['build:html','build:css', 'build:js', 'build:img','build:php'],'upload');
+  runSequence('clean:deploy','scss',['build:html','build:css', 'build:js', 'build:img','build:php','build:htaccess','build:txt','build:xml'],'upload');
   console.log('Deployed!');
 });

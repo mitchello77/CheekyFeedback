@@ -100,24 +100,14 @@ main {
       justify-content:space-between;
       align-items: center;
       padding: 50px;
-      @media screen and (min-width: $screen_phone) {
-        padding: 20px;
+      @media screen and (max-width: $screen_phone) {
+        padding: 100px;
       }
       p{
         text-align: center;
         color: lighten(#000, 20);
       }
       .action {
-        .hint {
-          display: block;
-          padding-top: 10px;
-          font-size: 1em;
-          font-weight: 300;
-          color: lighten(#000, 20);
-            @media screen and (min-width: $screen_phone) {
-            display: none;
-            }
-        }
         button.nav {
           text-align: center;
         }
@@ -187,7 +177,7 @@ main {
         margin-top: 100px;
         flex-grow: 0.3;
         @media screen and (max-width: $screen_phone) {
-        margin-top: 80px;
+        margin-top: 40px;
         }
         button.nav {
           background-color: $cheeky_red;
