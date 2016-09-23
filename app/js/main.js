@@ -65,7 +65,7 @@ $(function() {
     });
     $('#select_demographics .submit').click(function() {
       if ($('#age').val()) {
-        $('#form')[0].reset();
+        //$('#form')[0].reset();
         nextSection($('#select_demographics'));
       }
     });
