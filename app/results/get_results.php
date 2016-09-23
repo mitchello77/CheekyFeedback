@@ -33,17 +33,23 @@ $columns = array(
         'db'        => 'tblResponses_datetime',
         'dt'        => 0,
         'formatter' => function( $d, $row ) {
-            return date( 'jS M y', strtotime($d));
+            return date( 'd/m/y h:i:s A', strtotime($d));
         }
     ),
     array( 'db' => 'tblResponses_drink', 'dt' => 1 ),
     array( 'db' => 'tblResponses_rating',  'dt' => 2 ),
-    array( 'db' => 'tblResponses_couponused',   'dt' => 3 ),
+    array(
+        'db'        => 'tblResponses_couponused',
+        'dt'        => 3,
+        'formatter' => function( $d, $row ) {
+            return boolval($d) ? 'True' : 'False';
+        }
+    ),
     array( 'db' => 'tblResponses_age',     'dt' => 4 ),
     array( 'db' => 'tblResponses_gender',     'dt' => 5 ),
     array( 'db' => 'tblResponses_useragent',     'dt' => 6 ),
     array( 'db' => 'tblResponses_device',     'dt' => 7 ),
-    array( 'db' => 'blResponses_ip',     'dt' => 8 )
+    array( 'db' => 'tblResponses_ip',     'dt' => 8 )
 );
 
 // SQL server connection information
