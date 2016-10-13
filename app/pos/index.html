@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta charset="utf-8">
+    <title>Cheeky POS</title>
+    <meta name="description" content="Cheeky Bevy Market Day Feedback System.">
+    <meta name="keywords" content="Cheeky, Feedback, Survey, Feedback, Bevy, QUTopia, QUT">
+    <meta name="author" content="Cheeky Bevy">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/png" href="../img/favicon.png"> <!-- 32px -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="main-wrap">
+      <header>
+        <h1>Cheeky POS</h1>
+      </header>
+      <main>
+        <section id="select_drink">
+          <div class="wrap">
+            <form id="form" method="post" target="hidden-frame" action="sendpos.php">
+              <div class="grid">
+                  <button type="button" name="Love Potion" class="d_lp"><span>Love Potion</span></button>
+                  <button type="button" name="Darkside" class="d_ds"><span>Darkside</span></button>
+                  <button type="button" name="Hippie" class="d_hip" ><span>Hippie</span></button>
+                  <button type="button" name="Panty Dropper" class="d_pd"><span>Panty Dropper</span></button>
+                  <button type="button" name="Deconstructed Mayhem" class="d_dm"><span>Deconstructed Mayhem</span></button>
+                  <button type="button" name="You're A Wizard Harry" class="d_yawh"><span>You're A Wizard Harry</span></button>
+                  <button type="button" name="Atomic Bomb" class="d_ab"><span>Atom Bomb</span></button>
+                  <button type="button" name="Soda Water" class="d_sam"><span>Soda Water</span></button>
+                  <button type="button" name="Other" class="d_other"><span>Other</span></button>
+              </div>
+              <input type="text" class="hidden" name="marketday" id="marketday" value="1" readonly> <br />
+              <input type="text" class="hidden" name="drink" id="drink" readonly> <br />
+            </form>
+            <iframe class="hidden" name="hidden-frame"></iframe>
+          </div>
+        </section>
+      </main>
+      <footer><div class="colourborder"><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div><div><span></span></div></div></footer>
+    </div>
+    <script type="text/javascript" src="../js/pos.js"></script>
+  </body>
+</html>
