@@ -7,7 +7,10 @@ $(function() {
       buttons: [
             'excelHtml5',
             'pdfHtml5'
-        ]
+        ],
+      "columnDefs": [
+        { "width": "300px", "targets": 6 }
+      ]
   } );
 
 });
