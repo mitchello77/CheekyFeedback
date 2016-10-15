@@ -9,7 +9,7 @@ $(function() {
             'pdfHtml5'
         ],
       columnDefs: [
-        { width: 200, targets: 6 }
+        { width: 200, targets: 5 }
       ],
       fixedColumns: true,
       scrollX: true
