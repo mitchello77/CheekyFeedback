@@ -94,6 +94,23 @@ main {
       justify-content:space-between;
       align-items: center;
       padding: 50px;
+      position: relative;
+      .disabled-overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: #999;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        span {
+          color: #fff;
+          font-size: 22px;
+          text-align: center;
+        }
+      }
       @media screen and (max-width: $screen_phone) {
         padding: 20px;
       }

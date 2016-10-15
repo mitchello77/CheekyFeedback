@@ -16,7 +16,9 @@ $(function() {
 
   $('#select_drink .grid button').click(function() {
     $('#drink').val($(this).attr('name'));
-    $('#form').submit();
+
+    // disabled as market day over. DOnt want people adding entries as i run the analysis.
+    //$('#form').submit();
     $('#select_drink .wrap').animateCss('shake');
   });
 });
