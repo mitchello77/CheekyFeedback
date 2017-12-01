@@ -47,9 +47,9 @@ $columns = array(
 
 // SQL server connection information
 $sql_details = array(
-    'user' => base64_decode("bWl0Y2g5NzBfY2Jldnk="),
-    'pass' => base64_decode("IWNoZWVreWJldnkxMjM="),
-    'db'   => base64_decode("bWl0Y2g5NzBfY2hlZWt5ZmVlZGJhY2s="),
+    'user' => base64_decode("bWl0Y2hlbGxfY2Jldnk="),
+    'pass' => base64_decode("emlPM0M2STg5VDYx"),
+    'db'   => base64_decode("bWl0Y2hlbGxfY2hlZWt5ZmVlZGJhY2s="),
     'host' => 'localhost'
 );
 

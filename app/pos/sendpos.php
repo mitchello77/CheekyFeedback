@@ -3,9 +3,9 @@
 <?php
 
 $servername = "localhost";
-$username = base64_decode("bWl0Y2g5NzBfY2Jldnk=");
-$password = base64_decode("IWNoZWVreWJldnkxMjM=");
-$dbname = base64_decode("bWl0Y2g5NzBfY2hlZWt5ZmVlZGJhY2s=");
+$username = base64_decode("bWl0Y2hlbGxfY2Jldnk=");
+$password = base64_decode("emlPM0M2STg5VDYx=");
+$dbname = base64_decode("bWl0Y2hlbGxfY2hlZWt5ZmVlZGJhY2s=");
 
 
 // Create connection
